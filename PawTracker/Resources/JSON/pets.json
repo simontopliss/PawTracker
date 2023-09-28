@@ -1,0 +1,67 @@
+[
+    {
+        "id": "08F40734-EFE6-4D75-B59A-37CD55948DBE",
+        "name": "Fluffy",
+        "type": "Cat",
+        "breed": "Persian Long-haired",
+        "gender": "Female",
+        "weight": 4.2,
+        "date_of_birth": "2022-03-20T00:00:00Z",
+        "desc": "My cat smells of cat food.",
+        "pet_image_name": "Fluffy"
+    },
+    {
+        "id": "EAE9FE16-1A0C-4E0B-9193-7D699DF6C9F6",
+        "name": "George",
+        "type": "Cat",
+        "breed": "Domestic Long-haired",
+        "weight": 0.0,
+        "date_of_birth": "2016-08-28T00:00:00Z",
+        "deceased": true,
+        "desc": "Dead."
+    },
+    {
+        "id": "00C1F66B-44C1-448A-B16B-4F961C651E1F",
+        "name": "Gracie",
+        "type": "Cat",
+        "breed": "Domestic Short-haired",
+        "gender": "Female",
+        "weight": 3.3,
+        "date_of_birth": "2018-03-21T00:00:00Z",
+        "desc": "Tabby.",
+        "pet_image_name": "Gracie"
+    },
+    {
+        "id": "22634591-5AB3-4FF8-BBAF-3E0D3A11C28F",
+        "name": "Maggie",
+        "type": "Rat",
+        "breed": "Fancy Rat",
+        "gender": "Female",
+        "weight": 0.326,
+        "date_of_birth": "2021-03-22T00:00:00Z",
+        "desc": "The fancy rat (Rattus norvegicus domestica) is the domesticated form of Rattus norvegicus, the brown rat, and the most common species of rat kept as a pet. The name fancy rat derives from the use of the adjective fancy for a hobby, also seen in 'animal fancy', a hobby involving the appreciation, promotion, or breeding of pet or domestic animals.",
+        "pet_image_name": "Maggie"
+    },
+    {
+        "id": "B3F5D49C-EE90-442B-8A6F-8557DA2DEEE7",
+        "name": "Matilda",
+        "type": "Hamster",
+        "breed": "Golden",
+        "gender": "Female",
+        "weight": 0.27,
+        "date_of_birth": "2019-03-23T00:00:00Z",
+        "desc": "Hamsters are rodents (order Rodentia) belonging to the subfamily Cricetinae, which contains 19 species classified in seven genera. They have become established as popular small pets. The best-known species of hamster is the golden or Syrian hamster (Mesocricetus auratus), which is the type most commonly kept as pets.",
+        "pet_image_name": "Matilda"
+    },
+    {
+        "id": "D34DF44E-D7E5-4ED7-90DD-4C2E2DE39B3C",
+        "name": "Jackson",
+        "type": "Dog",
+        "breed": "German Shepherd",
+        "gender": "Male",
+        "weight": 34.2,
+        "date_of_birth": "2021-03-24T00:00:00Z",
+        "desc": "Sable. Crazy.",
+        "pet_image_name": "Jackson"
+    }
+]
