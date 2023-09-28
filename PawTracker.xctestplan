@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "512963F8-D8FD-418F-99FB-B73CB715189A",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:PawTracker.xcodeproj",
+      "identifier" : "621FF998299F927200BE64E8",
+      "name" : "PawTracker"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:PawTracker.xcodeproj",
+        "identifier" : "624C6E612AC630D700525A50",
+        "name" : "PawTrackerTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:PawTracker.xcodeproj",
+        "identifier" : "623210202AC6321400371A1A",
+        "name" : "PawTrackerUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

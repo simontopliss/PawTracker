@@ -21,6 +21,7 @@ struct PetListPetNameView: View {
                 .fontDesign(.rounded)
                 .fontWeight(.bold)
                 .foregroundColor(Constants.AppColors.brandPrimary)
+                .accessibilityLabel("PetName")
 
             if pet.dateOfBirth != nil {
                 if isBirthdayToday(pet.dateOfBirth!) { // swiftlint:disable:this force_unwrapping
