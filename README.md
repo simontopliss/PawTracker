@@ -2,6 +2,10 @@
 
 ## PawTracker is an app to help you keep track of all your pets information.
 
+![Screenshot_Montage](https://github.com/simontopliss/PawTracker/assets/971542/7e625aef-e76b-4412-bc85-3bbef25c7f52)
+
+# Features
+
 ### Pet Details
 - Name, date of birth, gender, breed.
 
@@ -13,3 +17,11 @@
 
 ### Contacts
 - Keep the contact information for your vet, groomer, walker etc. handy.
+
+---
+
+# Technology
+
+- SwiftUI
+- Unit Tests
+- UI Tests
