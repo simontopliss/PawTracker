@@ -17,7 +17,6 @@
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:PawTracker.xcodeproj",
         "identifier" : "624C6E612AC630D700525A50",
@@ -25,7 +24,6 @@
       }
     },
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:PawTracker.xcodeproj",
         "identifier" : "623210202AC6321400371A1A",

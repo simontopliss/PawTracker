@@ -16,7 +16,7 @@ final class EventsView_UITests: XCTestCase {
         try super.setUpWithError()
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
-        //continueAfterFailure = false
+        continueAfterFailure = false
 
         app = XCUIApplication()
         app.launch()
@@ -36,27 +36,24 @@ final class EventsView_UITests: XCTestCase {
         let firstCell = eventsListViewCollectionView.cells.firstMatch
         firstCell.tap() // Go to EventDetailView
 
-//        let petPicker = app.collectionViews.pickerWheels["EditEventView_PetPicker"]
+//        let petPicker = app.pickerWheels["EditEventView_PetPicker"]
 //        XCTAssert(petPicker.exists)
 
-        let datePicker = app.collectionViews.datePickers["EditEventView_DatePicker"]
+        let datePicker = app.datePickers["EditEventView_DatePicker"]
         XCTAssert(datePicker.exists)
 
-        let subjectTextField = app.collectionViews.textFields["EditEventView_SubjectTextField"]
+        let subjectTextField = app.textFields["EditEventView_SubjectTextField"]
         XCTAssertEqual(subjectTextField.placeholderValue, "Subject")
 
-//        let notesTextField = app.collectionViews.textFields["EditEventView_NotesTextField"]
+//        let notesTextField = app.textFields["EditEventView_NotesTextField"]
 //        XCTAssert(notesTextField.exists)
 
-//        let saveButton = app.collectionViews.buttons["EditEventView_SaveButton"]
-//        XCTAssert(saveButton.exists)
+        let saveButton = app.buttons["EditPetView_SubmitButton"]
+        XCTAssert(saveButton.exists)
 
-//        let deleteButton = app.collectionViews.buttons["EditEventView_DeleteButton"]
-//        XCTAssert(deleteButton.exists)
+        let deleteButton = app.buttons["EditEventView_DeleteButton"]
+        XCTAssert(deleteButton.exists)
 
-//        let cancelButton = app.collectionViews.buttons["EditEventView_CancelButton"]
-//        XCTAssert(cancelButton.exists)
-
-//        cancelButton.tap() // Go back to EventsListView
+        app.navigationBars.firstMatch.buttons["Events"].tap()
     }
 }

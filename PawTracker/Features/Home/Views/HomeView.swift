@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
 
     // MARK: - PROPERTIES
-    @SceneStorage("showOnboardingView") private var showOnboardingView = true
+    @SceneStorage("showOnboardingView") private var showOnboardingView = false
     @EnvironmentObject var petViewModel: PetViewModel
     @EnvironmentObject var dailyFeedsViewModel: DailyFeedsViewModel
 
