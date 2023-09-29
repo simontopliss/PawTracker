@@ -1,6 +1,6 @@
 # PawTracker
 
-## PawTracker is an app to help you keep track of all your pets information.
+## PawTracker is an app to help you keep track of all your pet's information.
 
 ![Screenshot_Montage](https://github.com/simontopliss/PawTracker/assets/971542/7e625aef-e76b-4412-bc85-3bbef25c7f52)
 
