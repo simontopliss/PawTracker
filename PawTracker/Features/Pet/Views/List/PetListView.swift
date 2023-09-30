@@ -18,7 +18,7 @@ struct PetListView: View {
 
     // MARK: - BODY
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach($petViewModel.pets) { pet in
                     NavigationLink {
@@ -62,7 +62,7 @@ struct PetListView: View {
                     Button {
                         showingAddScreen.toggle()
                     } label: {
-                        Label("Add Pet", systemImage: "plus")
+                        Label("Add Pet", systemImage: "plus.circle.fill")
                             .fontDesign(.rounded)
                     }
                     .accessibilityIdentifier("PetListView_AddPetButton")
@@ -70,6 +70,12 @@ struct PetListView: View {
             }
             .sheet(isPresented: $showingAddScreen) {
                 CreatePetView()
+            }
+            .searchable(text: $petViewModel.searchQuery) {
+                ForEach(petViewModel.filteredPets) { pet in
+                    Text(pet.name)
+                        .searchCompletion(pet.name)
+                }
             }
         }
     }
