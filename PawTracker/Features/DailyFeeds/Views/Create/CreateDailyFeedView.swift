@@ -51,9 +51,7 @@ struct CreateDailyFeedView: View {
                 Section {
                     Button("Submit") {
                         if let petName = selectedPetName,
-                           let pet = petViewModel.findPetByName(petName)
-                        {
-                            // swiftlint:disable:previous indentation_width
+                            let pet = petViewModel.findPetByName(petName) {
                             let feed = Feed(
                                 id: UUID(),
                                 feedTimes:

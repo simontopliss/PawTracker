@@ -36,8 +36,8 @@ final class EventsView_UITests: XCTestCase {
         let firstCell = eventsListViewCollectionView.cells.firstMatch
         firstCell.tap() // Go to EventDetailView
 
-//        let petPicker = app.pickerWheels["EditEventView_PetPicker"]
-//        XCTAssert(petPicker.exists)
+        // let petPicker = app.pickerWheels["EditEventView_PetPicker"]
+        // XCTAssert(petPicker.exists)
 
         let datePicker = app.datePickers["EditEventView_DatePicker"]
         XCTAssert(datePicker.exists)
@@ -45,8 +45,8 @@ final class EventsView_UITests: XCTestCase {
         let subjectTextField = app.textFields["EditEventView_SubjectTextField"]
         XCTAssertEqual(subjectTextField.placeholderValue, "Subject")
 
-//        let notesTextField = app.textFields["EditEventView_NotesTextField"]
-//        XCTAssert(notesTextField.exists)
+        // let notesTextField = app.textFields["EditEventView_NotesTextField"]
+        // XCTAssert(notesTextField.exists)
 
         let saveButton = app.buttons["EditPetView_SubmitButton"]
         XCTAssert(saveButton.exists)

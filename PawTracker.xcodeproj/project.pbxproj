@@ -87,6 +87,7 @@
 		62BD65F22A0280EE0039A253 /* daily-feeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 62BD65F12A0280EE0039A253 /* daily-feeds.json */; };
 		62CD52D829A1208F00958C33 /* LinearGradientRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CD52D729A1208F00958C33 /* LinearGradientRectView.swift */; };
 		62F0B00629ACB4CA00DDD8C6 /* NavButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F0B00529ACB4CA00DDD8C6 /* NavButtonView.swift */; };
+		62F676FE2AC8CF2D0076F85F /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F676FD2AC8CF2D0076F85F /* AppTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +193,7 @@
 		62BD65F12A0280EE0039A253 /* daily-feeds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "daily-feeds.json"; sourceTree = "<group>"; };
 		62CD52D729A1208F00958C33 /* LinearGradientRectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradientRectView.swift; sourceTree = "<group>"; };
 		62F0B00529ACB4CA00DDD8C6 /* NavButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavButtonView.swift; sourceTree = "<group>"; };
+		62F676FD2AC8CF2D0076F85F /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +418,7 @@
 		624C6E632AC630D700525A50 /* PawTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				62F676FC2AC8CEBD0076F85F /* FeatureTests */,
 				624C6E6B2AC6311700525A50 /* ModelTests */,
 			);
 			path = PawTrackerTests;
@@ -742,6 +745,14 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		62F676FC2AC8CEBD0076F85F /* FeatureTests */ = {
+			isa = PBXGroup;
+			children = (
+				62F676FD2AC8CF2D0076F85F /* AppTests.swift */,
+			);
+			path = FeatureTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -749,6 +760,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 621FF9A7299F927300BE64E8 /* Build configuration list for PBXNativeTarget "PawTracker" */;
 			buildPhases = (
+				628928DE2AC8D62900F86BC3 /* SwiftLint */,
 				621FF995299F927200BE64E8 /* Sources */,
 				621FF996299F927200BE64E8 /* Frameworks */,
 				621FF997299F927200BE64E8 /* Resources */,
@@ -877,6 +889,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		628928DE2AC8D62900F86BC3 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		621FF995299F927200BE64E8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -962,6 +996,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62F676FE2AC8CF2D0076F85F /* AppTests.swift in Sources */,
 				624C6E772AC6311700525A50 /* PetModelTests.swift in Sources */,
 				624C6E752AC6311700525A50 /* EventModelTests.swift in Sources */,
 				624C6E792AC6311700525A50 /* FeatureModelTests.swift in Sources */,
@@ -1038,7 +1073,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1093,7 +1128,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1121,6 +1156,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1152,6 +1188,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

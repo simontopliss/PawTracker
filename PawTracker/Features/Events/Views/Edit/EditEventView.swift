@@ -63,8 +63,7 @@ struct EditEventView: View {
                 Section {
                     Button("Submit") {
                         if let petName = selectedPetName,
-                           let pet = petViewModel.findPetByName(petName)
-                        {
+                            let pet = petViewModel.findPetByName(petName) {
                             event.petID = pet.id
                             eventsViewModel.updateEvent(event)
                         }
