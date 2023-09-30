@@ -42,7 +42,7 @@ struct EditablePetImageView: View {
                         .font(.system(size: 30))
                         .foregroundColor(.accentColor)
                 }
-                .onChange(of: selectedItem) { newItem in
+                .onChange(of: selectedItem) { _, newItem in
                     Task {
                         // Retrieve selected asset in the form of Data
                         if let data = try? await newItem?.loadTransferable(type: Data.self) {
