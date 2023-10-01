@@ -11,10 +11,10 @@ import SwiftUI
 struct PawTracker: App {
 
     // MARK: - PROPERTIES
-    @StateObject var petViewModel   = PetViewModel()
-    @StateObject var eventViewModel = EventsViewModel()
-    @StateObject var dailyFeedsViewModel = DailyFeedsViewModel()
-    @StateObject var contactsViewModel = ContactsViewModel()
+    @StateObject var petViewModel         = PetViewModel()
+    @StateObject var eventViewModel       = EventsViewModel()
+    @StateObject var dailyFeedsViewModel  = DailyFeedsViewModel()
+    @StateObject var contactsViewModel    = ContactsViewModel()
 
     // MARK: - BODY
     var body: some Scene {

@@ -24,6 +24,7 @@ struct PawTrackerIconView: View {
                 color: Constants.Shadows.shadowColor,
                 radius: 12
             )
+            .accessibilityIdentifier("PawTrackerIconView")
     }
 }
 

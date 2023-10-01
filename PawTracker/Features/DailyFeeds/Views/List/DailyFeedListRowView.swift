@@ -31,6 +31,7 @@ struct DailyFeedListRowView: View {
                     .fontDesign(.rounded)
                     .lineLimit(1)
                     .foregroundColor(Constants.AppColors.textColor)
+                    .accessibilityIdentifier("DailyFeedListRowView_FeedTimesJoined")
             }
         }
     }

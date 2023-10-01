@@ -53,22 +53,15 @@ struct EditPetView: View {
 
                 }
                 .fontDesign(.rounded)
-
             }
-            .alert(isPresented: $petViewModel.hasValidatorError, error: petViewModel.validatorError) {
+            .alert(
+                isPresented: $petViewModel.hasValidatorError,
+                error: petViewModel.validatorError
+            ) {
                 Button("Cancel", role: .cancel) {}
+                    .accessibilityIdentifier("EditPetView_ValidatorErrorAlertCancelButton")
             }
             .navigationTitle("Edit Pet")
-            .navigationBarHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                    .fontDesign(.rounded)
-                    .accessibilityIdentifier("EditPetView_CancelButton")
-                }
-            }
         }
     }
 }

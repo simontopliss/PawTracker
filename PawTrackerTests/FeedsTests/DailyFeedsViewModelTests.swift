@@ -1,14 +1,7 @@
-//
-//  DailyFeedsModelTests.swift
-//  ModelTests
-//
-//  Created by Simon Topliss on 05/05/2023.
-//
-
 @testable import PawTracker
 import XCTest
 
-final class DailyFeedsModelTests: XCTestCase {
+final class DailyFeedsViewModelTests: XCTestCase {
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     private var dailyFeedsViewModel: DailyFeedsViewModel!

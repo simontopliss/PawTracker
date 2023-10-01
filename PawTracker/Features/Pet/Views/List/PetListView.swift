@@ -54,6 +54,7 @@ struct PetListView: View {
                         }
                     }
                 }
+                .accessibilityIdentifier("PetListView_DeletePetConfirmation")
             }
             .accessibilityIdentifier("PetListView_List")
             .navigationTitle("My Pets")
@@ -75,6 +76,7 @@ struct PetListView: View {
                 ForEach(petViewModel.filteredPets) { pet in
                     Text(pet.name)
                         .searchCompletion(pet.name)
+                        .accessibilityIdentifier("PetListView_SearchCompletion")
                 }
             }
         }

@@ -18,8 +18,11 @@ struct ContactListRowView: View {
         VStack(alignment: .leading) {
             Text(contact.name)
                 .font(.headline)
+                .accessibilityIdentifier("ContactListRowView_Name")
+
             Text(contact.phoneNumber)
                 .font(.subheadline)
+                .accessibilityIdentifier("ContactListRowView_PhoneNumber")
         }
         .fontDesign(.rounded)
         .lineLimit(1)

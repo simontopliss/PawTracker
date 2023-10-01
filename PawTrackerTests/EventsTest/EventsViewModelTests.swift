@@ -1,14 +1,7 @@
-//
-//  EventModelTests.swift
-//  EventModelTests
-//
-//  Created by Simon Topliss on 24/03/2023.
-//
-
 @testable import PawTracker
 import XCTest
 
-final class EventModelTests: XCTestCase {
+final class EventsViewModelTests: XCTestCase {
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     private var eventViewModel: EventsViewModel!

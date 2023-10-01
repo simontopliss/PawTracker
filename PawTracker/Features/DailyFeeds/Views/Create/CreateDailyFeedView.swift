@@ -29,23 +29,28 @@ struct CreateDailyFeedView: View {
                     Picker("Pet", selection: $selectedPetName) {
                         ForEach(petNames, id: \.self) { name in
                             Text(name).tag(Optional(name))
+                                .accessibilityIdentifier("CreateDailyFeedView_PetName")
                         }
                     }
                     .fontWeight(.bold)
-                    .accessibilityIdentifier("CreateDailyFeedView_PetName")
+                    .accessibilityIdentifier("CreateDailyFeedView_PetPicker")
 
                     Toggle(isOn: $morning) {
                         Text("Morning")
                     }
+                    .accessibilityIdentifier("CreateDailyFeedView_MorningToggle")
+
                     Toggle(isOn: $lunch) {
                         Text("Lunch")
                     }
+                    .accessibilityIdentifier("CreateDailyFeedView_LunchToggle")
+
                     Toggle(isOn: $evening) {
                         Text("Evening")
                     }
-                    .toggleStyle(SwitchToggleStyle())
-
+                    .accessibilityIdentifier("CreateDailyFeedView_EveningToggle")
                 }
+                .toggleStyle(SwitchToggleStyle())
                 .foregroundColor(Constants.AppColors.textColor)
 
                 Section {
@@ -55,11 +60,11 @@ struct CreateDailyFeedView: View {
                             let feed = Feed(
                                 id: UUID(),
                                 feedTimes:
-                                FeedTimes(
-                                    morning: morning,
-                                    lunch: lunch,
-                                    evening: evening
-                                ),
+                                    FeedTimes(
+                                        morning: morning,
+                                        lunch: lunch,
+                                        evening: evening
+                                    ),
                                 petID: pet.id,
                                 isFed: false
                             )
@@ -73,15 +78,6 @@ struct CreateDailyFeedView: View {
             .fontDesign(.rounded)
         }
         .navigationTitle("Create Daily Feed")
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button("Cancel") {
-                    dismiss()
-                }
-                .fontDesign(.rounded)
-                .accessibilityIdentifier("CreateDailyFeedView_CancelButton")
-            }
-        }
         .onAppear {
             petNames = petViewModel.pets.map { $0.name }
             selectedPetName = petNames.first

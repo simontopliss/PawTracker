@@ -109,14 +109,6 @@ final class DailyFeedsViewModel: ObservableObject {
         feeds.first { $0.id == feedID }
     }
 
-    func updateFeedsWithPets(petViewModel: PetViewModel) {
-        for index in 0..<feeds.count {
-            if let pet = petViewModel.findPetByID(feeds[index].petID) {
-                feeds[index].pet = pet
-            }
-        }
-    }
-
     // MARK: - DAILY FEEDS
 
     func loadDailyFeeds() -> [DailyFeed] {

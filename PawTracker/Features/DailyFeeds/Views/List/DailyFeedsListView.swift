@@ -19,7 +19,7 @@ struct DailyFeedsListView: View {
 
     // MARK: - BODY
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach($dailyFeedsViewModel.feeds) { feed in
                     if let pet = petViewModel.findPetByID(feed.petID.wrappedValue) {
@@ -54,15 +54,15 @@ struct DailyFeedsListView: View {
                         }
                     }
                 }
+                .accessibilityIdentifier("DailyFeedsListView_ConfirmationDialog_YesButton")
             }
-            .accessibilityIdentifier("DailyFeedsListView_List")
             .navigationTitle("Daily Feeds")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         showingAddScreen.toggle()
                     } label: {
-                        Label("Add Daily Feed", systemImage: "plus")
+                        Label("Add Daily Feed", systemImage: "plus.circle.fill")
                             .fontDesign(.rounded)
                     }
                     .accessibilityIdentifier("DailyFeedsListView_AddButton")

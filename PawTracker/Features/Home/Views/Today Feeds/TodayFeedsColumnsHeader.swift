@@ -23,14 +23,20 @@ struct TodayFeedsColumnsHeader: View {
 
             Group {
                 Spacer()
+
                 Text("Morning")
                     .accessibilityIdentifier("TodayFeedsView_MorningColumnHeader")
+
                 Spacer()
+
                 Text("Lunch")
                     .accessibilityIdentifier("TodayFeedsView_LunchColumnHeader")
+
                 Spacer()
+
                 Text("Evening")
                     .accessibilityIdentifier("TodayFeedsView_EveningColumnHeader")
+
                 Spacer()
             }
             .font(.footnote)

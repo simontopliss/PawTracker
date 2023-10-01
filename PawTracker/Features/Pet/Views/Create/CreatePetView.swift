@@ -35,6 +35,7 @@ struct CreatePetView: View {
                 }
                 .listRowBackground(Color.clear)
                 .padding([.top], 10)
+
                 Group {
                     Section {
                         name
@@ -64,15 +65,6 @@ struct CreatePetView: View {
                 Button("Cancel", role: .cancel) {}
             }
             .navigationTitle("Add Pet")
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                    .fontDesign(.rounded)
-                    .accessibilityIdentifier("CreatePetView_CancelButton")
-                }
-            }
         }
     }
 }

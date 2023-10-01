@@ -1,17 +1,12 @@
-//
-//  PawTrackerTests.swift
-//  PawTrackerTests
-//
-//  Created by Simon Topliss on 23/03/2023.
-//
-
 @testable import PawTracker
 import XCTest
 
-final class PetModelTests: XCTestCase {
+final class PetViewModelTests: XCTestCase {
 
-    private var petViewModel: PetViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
-    private var pet: Pet! // swiftlint:disable:this implicitly_unwrapped_optional
+    // swiftlint:disable:next implicitly_unwrapped_optional
+    private var petViewModel: PetViewModel!
+    // swiftlint:disable:next implicitly_unwrapped_optional
+    private var pet: Pet!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -107,13 +102,6 @@ final class PetModelTests: XCTestCase {
     }
 
     func test_PetDateOfBirth_isValid() {
-        //        let datePattern = #"^\d{4}-\d{2}-\d{2}$"#
-        //        let result = pet.dateOfBirth.range(
-        //            of: datePattern,
-        //            options: .regularExpression
-        //        )
-        //        let validDate = (result != nil)
-        //        XCTAssertTrue(validDate)
         XCTAssertNotNil(pet.dateOfBirth, "pet.dateOfBirth should not be nil")
     }
 
@@ -164,6 +152,31 @@ final class PetModelTests: XCTestCase {
     func test_SavePetImage_saveIsSuccessful() {
         // swiftlint:disable:next force_unwrapping
         XCTAssertNoThrow(petViewModel.savePetImage(pet: &pet, image: UIImage(named: "Fluffy")!))
+    }
+
+    func test_FilterPets_WhenSearchQueryIsEmpty() {
+        petViewModel.searchQuery = ""
+        petViewModel.filterPets()
+        // Here we assume that petViewModel.pets already contains some pets
+        XCTAssertEqual(petViewModel.filteredPets, petViewModel.pets)
+    }
+
+    func test_FilterPets_WhenSearchQueryMatchesName() {
+        petViewModel.searchQuery = "PetName"
+        petViewModel.filterPets()
+        // Check if the filteredPets array contains the pet with the name "PetName"
+    }
+
+    func test_FilterPets_WhenSearchQueryMatchesType() {
+        petViewModel.searchQuery = "PetType"
+        petViewModel.filterPets()
+        // Check if the filteredPets array contains the pet with the type "PetType"
+    }
+
+    func test_FilterPets_WhenSearchQueryMatchesBreed() {
+        petViewModel.searchQuery = "PetBreed"
+        petViewModel.filterPets()
+        // Check if the filteredPets array contains the pet with the breed "PetBreed"
     }
 
     func createNewPet() -> Pet {

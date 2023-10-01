@@ -20,53 +20,45 @@ struct EditDailyFeedView: View {
 
     // MARK: - BODY
     var body: some View {
-        NavigationStack {
-            Form {
-                Section {
-                    VStack {
-                        LargeTitleView(title: pet.name)
-                        PetDetailImageView(pet: pet)
-                    }
+        Form {
+            Section {
+                VStack {
+                    LargeTitleView(title: pet.name)
+                    PetDetailImageView(pet: pet)
                 }
-                .listRowBackground(Color.clear)
-
-                Group {
-                    Section {
-                        Toggle(isOn: $feed.feedTimes.morning) {
-                            Text("Morning")
-                        }
-                        Toggle(isOn: $feed.feedTimes.lunch) {
-                            Text("Lunch")
-                        }
-                        Toggle(isOn: $feed.feedTimes.evening) {
-                            Text("Evening")
-                        }
-                        .toggleStyle(SwitchToggleStyle())
-                    }
-                    .foregroundColor(Constants.AppColors.textColor)
-
-                    Section {
-                        Button("Submit") {
-                            dailyFeedsViewModel.updateFeed(feed)
-                            dismiss()
-                        }
-                        .accessibilityIdentifier("EditPetView_SubmitButton")
-                    }
-                }
-                .fontDesign(.rounded)
             }
-            .navigationTitle("Edit Daily Feed")
-            .navigationBarHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button("Cancel") {
+            .listRowBackground(Color.clear)
+
+            Group {
+                Section {
+                    Toggle(isOn: $feed.feedTimes.morning) {
+                        Text("Morning")
+                    }
+                    .accessibilityIdentifier("EditPetView_MorningToggle")
+
+                    Toggle(isOn: $feed.feedTimes.lunch) {
+                        Text("Lunch")
+                    }
+                    .accessibilityIdentifier("EditPetView_LunchToggle")
+
+                    Toggle(isOn: $feed.feedTimes.evening) {
+                        Text("Evening")
+                    }
+                    .accessibilityIdentifier("EditPetView_EveningToggle")
+                }
+                .foregroundColor(Constants.AppColors.textColor)
+
+                Section {
+                    Button("Submit") {
+                        dailyFeedsViewModel.updateFeed(feed)
                         dismiss()
                     }
-                    .fontDesign(.rounded)
-                    .accessibilityIdentifier("EditPetView_CancelButton")
+                    .accessibilityIdentifier("EditPetView_SubmitButton")
                 }
             }
+            .fontDesign(.rounded)
         }
+        .navigationTitle("Edit Daily Feed")
     }
 }
 

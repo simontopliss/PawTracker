@@ -30,9 +30,11 @@ struct EventListRowView: View {
                     Text(event.subject)
                         .fontWeight(.semibold)
                         .font(.subheadline)
+                        .accessibilityIdentifier("EventSubject")
 
                     Text(event.datetime)
                         .font(.caption)
+                        .accessibilityIdentifier("EventDateTime")
                 }
                 .fontDesign(.rounded)
                 .lineLimit(1)
@@ -40,7 +42,6 @@ struct EventListRowView: View {
 
             }
             .padding(.leading, 6)
-
         }
     }
 }

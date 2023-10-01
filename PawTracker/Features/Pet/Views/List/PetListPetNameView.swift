@@ -28,6 +28,7 @@ struct PetListPetNameView: View {
                     Text("\(Image(systemName: "birthday.cake.fill"))")
                         .foregroundColor(.red)
                         .offset(y: -2)
+                        .accessibilityLabel("Birthday")
                 }
             }
         }

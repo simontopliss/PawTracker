@@ -27,12 +27,14 @@ struct PetListRowView: View {
                         .fontDesign(.rounded)
                         .lineLimit(1)
                         .foregroundColor(Constants.AppColors.textColor)
+                        .accessibilityIdentifier("PetListRowView_PetType")
                 } else {
                     Text("\(pet.type), \(pet.breed)")
                         .font(.footnote)
                         .fontDesign(.rounded)
                         .lineLimit(1)
                         .foregroundColor(Constants.AppColors.textColor)
+                        .accessibilityIdentifier("PetListRowView_PetTypeAndBreed")
                 }
 
                 if pet.dateOfBirth != nil {
@@ -42,9 +44,10 @@ struct PetListRowView: View {
                         .lineLimit(1)
                         .foregroundColor(
                             isBirthdayToday(pet.dateOfBirth!) // swiftlint:disable:this force_unwrapping
-                                ? .red
-                                : Constants.AppColors.textColor
+                            ? .red
+                            : Constants.AppColors.textColor
                         )
+                        .accessibilityIdentifier("PetListRowView_PetAge")
                 }
 
             }

@@ -48,7 +48,6 @@ struct FeatureRowView: View {
                 )
                 .padding(Constants.Onboarding.featurePadding)
                 .accessibilityIdentifier("FeatureRow_Description")
-
         }
         .frame(minHeight: Constants.Onboarding.featureFrameHeight)
     }

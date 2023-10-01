@@ -24,6 +24,7 @@ struct ContentView: View {
                 .tabItem {
                     Label(Tab.home.label, systemImage: Tab.home.icon)
                         .fontDesign(.rounded)
+                        .accessibilityIdentifier("HomeViewTab")
                 }
                 .tag(Tab.home)
 
@@ -32,6 +33,7 @@ struct ContentView: View {
                 .tabItem {
                     Label(Tab.pets.label, systemImage: Tab.pets.icon)
                         .fontDesign(.rounded)
+                        .accessibilityIdentifier("PetListViewTab")
                 }
                 .tag(Tab.pets)
 
@@ -39,6 +41,7 @@ struct ContentView: View {
                 .tabItem {
                     Label(Tab.events.label, systemImage: Tab.events.icon)
                         .fontDesign(.rounded)
+                        .accessibilityIdentifier("EventsListViewTab")
                 }
                 .tag(Tab.events)
 
@@ -46,6 +49,7 @@ struct ContentView: View {
                 .tabItem {
                     Label(Tab.dailyFeeds.label, systemImage: Tab.dailyFeeds.icon)
                         .fontDesign(.rounded)
+                        .accessibilityIdentifier("DailyFeedsListViewTab")
                 }
                 .tag(Tab.dailyFeeds)
 
@@ -53,6 +57,7 @@ struct ContentView: View {
                 .tabItem {
                     Label(Tab.contacts.label, systemImage: Tab.contacts.icon)
                         .fontDesign(.rounded)
+                        .accessibilityIdentifier("ContactsListViewTab")
                 }
                 .tag(Tab.contacts)
         }
@@ -64,7 +69,8 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(PetViewModel())
-            .environmentObject(EventsViewModel())
             .environmentObject(DailyFeedsViewModel())
+            .environmentObject(EventsViewModel())
+            .environmentObject(ContactsViewModel())
     }
 }

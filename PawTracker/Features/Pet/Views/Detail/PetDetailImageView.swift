@@ -25,6 +25,7 @@ struct PetDetailImageView: View {
                 y: Constants.Shadows.largeY
             )
             .padding(.horizontal)
+            .accessibilityIdentifier("PetDetailImageView")
     }
 }
 

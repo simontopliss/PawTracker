@@ -19,7 +19,7 @@ struct EventsListView: View {
 
     // MARK: - BODY
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach($eventsViewModel.uncompletedEvents) {event in
                     if let pet = petViewModel.findPetByID(event.petID.wrappedValue) {
@@ -55,6 +55,7 @@ struct EventsListView: View {
                         }
                     }
                 }
+                .accessibilityIdentifier("EventsListView_ConfirmationDialog_YesButton")
             }
             .accessibilityIdentifier("EventsListView_List")
             .navigationTitle("Events")
@@ -63,7 +64,7 @@ struct EventsListView: View {
                     Button {
                         showingAddScreen.toggle()
                     } label: {
-                        Label("Add Event", systemImage: "plus")
+                        Label("Add Event", systemImage: "plus.circle.fill")
                             .fontDesign(.rounded)
                     }
                     .accessibilityIdentifier("EventsListView_AddButton")

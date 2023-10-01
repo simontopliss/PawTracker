@@ -58,6 +58,7 @@ struct EditablePetImageView: View {
                     }
                 }
             }
+            .accessibilityIdentifier("EditablePetImageView")
     }
 }
 

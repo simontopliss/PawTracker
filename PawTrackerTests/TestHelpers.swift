@@ -1,10 +1,3 @@
-//
-//  Helpers.swift
-//  ModelTests
-//
-//  Created by Simon Topliss on 05/05/2023.
-//
-
 import Foundation
 
 func isoDateAsDate(_ isoDate: String) -> Date {

@@ -71,4 +71,9 @@ enum Constants {
         public static let textColor = Color("TextColor")
         public static let grayBoxColor = Color("GrayBox")
     }
+
+    enum AppSymbols {
+        public static let addSymbol = "plus.circle.fill"
+        public static let trashSymbol = "trash"
+    }
 }

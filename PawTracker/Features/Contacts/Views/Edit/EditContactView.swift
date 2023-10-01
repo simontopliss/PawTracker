@@ -16,54 +16,46 @@ struct EditContactView: View {
 
     // MARK: - BODY
     var body: some View {
-        NavigationStack {
-            Form {
-                Group {
-                    Section {
-                        TextField("Name", text: $contact.name)
-                            .fontWeight(.semibold)
-                            .accessibilityIdentifier("EditContactView_NameTextField")
-                        TextField("Address", text: $contact.address, axis: .vertical)
-                            .lineLimit(3...10)
-                            .accessibilityIdentifier("EditContactView_AddressTextField")
-                        TextField("Post Code", text: $contact.postCode)
-                            .accessibilityIdentifier("EditContactView_PostCodeTextField")
-                        TextField("Telephone", text: $contact.phoneNumber)
-                            .accessibilityIdentifier("EditContactView_TelephoneTextField")
-                    }
-                    .foregroundColor(Constants.AppColors.textColor)
+        Form {
+            Group {
+                Section {
+                    TextField("Name", text: $contact.name)
+                        .fontWeight(.semibold)
+                        .accessibilityIdentifier("EditContactView_NameTextField")
 
-                    Section {
-                        Button("Submit") {
-                            contactsViewModel.validateContact(contact)
-                            if contactsViewModel.hasValidatorError == false {
-                                contactsViewModel.updateContact(contact)
-                                dismiss()
-                            }
+                    TextField("Address", text: $contact.address, axis: .vertical)
+                        .lineLimit(3...10)
+                        .accessibilityIdentifier("EditContactView_AddressTextField")
+
+                    TextField("Post Code", text: $contact.postCode)
+                        .accessibilityIdentifier("EditContactView_PostCodeTextField")
+
+                    TextField("Telephone", text: $contact.phoneNumber)
+                        .accessibilityIdentifier("EditContactView_TelephoneTextField")
+                }
+                .foregroundColor(Constants.AppColors.textColor)
+
+                Section {
+                    Button("Submit") {
+                        contactsViewModel.validateContact(contact)
+                        if contactsViewModel.hasValidatorError == false {
+                            contactsViewModel.updateContact(contact)
+                            dismiss()
                         }
-                        .accessibilityIdentifier("EditContactView_SubmitButton")
                     }
-                }
-                .fontDesign(.rounded)
-            }
-            .alert(
-                isPresented: $contactsViewModel.hasValidatorError,
-                error: contactsViewModel.validatorError
-            ) {
-                Button("Cancel", role: .cancel) {}
-            }
-            .navigationTitle("Edit Contact")
-            .navigationBarHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                    .fontDesign(.rounded)
-                    .accessibilityIdentifier("EditContactView_CancelButton")
+                    .accessibilityIdentifier("EditContactView_SubmitButton")
                 }
             }
+            .fontDesign(.rounded)
         }
+        .alert(
+            isPresented: $contactsViewModel.hasValidatorError,
+            error: contactsViewModel.validatorError
+        ) {
+            Button("Cancel", role: .cancel) {}
+                .accessibilityIdentifier("EditContactView_ValidatorErrorAlert_CancelButton")
+        }
+        .navigationTitle("Edit Contact")
     }
 }
 

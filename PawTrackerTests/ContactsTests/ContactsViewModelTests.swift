@@ -1,14 +1,7 @@
-//
-//  ContactsModelTests.swift
-//  ModelTests
-//
-//  Created by Simon Topliss on 05/05/2023.
-//
-
 @testable import PawTracker
 import XCTest
 
-final class ContactsModelTests: XCTestCase {
+final class ContactsViewModelTests: XCTestCase {
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     private var contactsViewModel: ContactsViewModel!
@@ -16,12 +9,15 @@ final class ContactsModelTests: XCTestCase {
     private var contacts: [Contact]!
     // swiftlint:disable:next implicitly_unwrapped_optional
     private var contact: Contact!
+    // swiftlint:disable:next implicitly_unwrapped_optional
+    private var validator: ContactValidator!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
         contactsViewModel = ContactsViewModel()
         contacts = Contact.mockContacts
         contact = Contact.mockContact
+        validator = ContactValidator()
     }
 
     override func tearDownWithError() throws {
@@ -29,6 +25,7 @@ final class ContactsModelTests: XCTestCase {
         contactsViewModel = nil
         contacts = nil
         contact = nil
+        validator = nil
         try super.tearDownWithError()
     }
 
@@ -59,8 +56,10 @@ final class ContactsModelTests: XCTestCase {
     }
 
     func test_FindContact_findsContact() {
-        // swiftlint:disable:next force_unwrapping
-        let foundContact = contactsViewModel.findContactByID(UUID(uuidString: "FEDB5573-CDF7-42B3-B0ED-387718AE7561")!)
+        let foundContact = contactsViewModel.findContactByID(
+            // swiftlint:disable:next force_unwrapping
+            UUID(uuidString: "FEDB5573-CDF7-42B3-B0ED-387718AE7561")!
+        )
         XCTAssertNotNil(foundContact)
     }
 
@@ -70,6 +69,21 @@ final class ContactsModelTests: XCTestCase {
         XCTAssertEqual(contact.name, "Testing")
     }
 
+    func test_ValidateContact_isSuccessful() {
+        XCTAssertNoThrow(contactsViewModel.validateContact(contact))
+    }
+
+    func test_ValidateContact_failsWithInvalidContact() {
+        let contact = Contact(
+            id: UUID(),
+            name: "",
+            address: "",
+            postCode: "",
+            phoneNumber: ""
+        )
+        contactsViewModel.validateContact(contact)
+        XCTAssertTrue(contactsViewModel.hasValidatorError)
+    }
 
     func createContact() -> Contact {
         Contact(
@@ -80,5 +94,4 @@ final class ContactsModelTests: XCTestCase {
             phoneNumber: "(01482) 304024"
         )
     }
-
 }

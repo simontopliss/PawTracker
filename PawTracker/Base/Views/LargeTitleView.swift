@@ -26,6 +26,7 @@ struct LargeTitleView: View {
                 x: Constants.Shadows.largeX,
                 y: Constants.Shadows.largeY
             )
+            .accessibilityIdentifier("LargeTitleView")
     }
 }
 

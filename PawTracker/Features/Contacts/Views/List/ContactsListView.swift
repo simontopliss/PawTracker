@@ -18,7 +18,7 @@ struct ContactsListView: View {
 
     // MARK: - BODY
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach($contactsViewModel.contacts) { contact in
                     NavigationLink {
@@ -40,10 +40,8 @@ struct ContactsListView: View {
                     }
                 }
             }
-            .confirmationDialog(
-                "Are you sure?",
-                isPresented: $confirmationShown
-            ) {
+            .accessibilityIdentifier("ContactsListView_List")
+            .confirmationDialog("Are you sure?", isPresented: $confirmationShown) {
                 Button("Yes") {
                     if let contact = selectedContact {
                         withAnimation {
@@ -51,15 +49,15 @@ struct ContactsListView: View {
                         }
                     }
                 }
+                .accessibilityIdentifier("ContactsListView_ConfirmationDialog_YesButton")
             }
-            .accessibilityIdentifier("ContactsListView_List")
             .navigationTitle("Contacts")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         showingAddScreen.toggle()
                     } label: {
-                        Label("Add Contact", systemImage: "plus")
+                        Label("Add Contact", systemImage: "plus.circle.fill")
                             .fontDesign(.rounded)
                     }
                     .accessibilityIdentifier("ContactsListView_AddButton")

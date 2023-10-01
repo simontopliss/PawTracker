@@ -20,7 +20,7 @@ struct OnboardingHeaderView: View {
                 .foregroundColor(Constants.AppColors.brandPrimary)
                 .multilineTextAlignment(.center)
                 .padding(.top, 8)
-            .accessibilityIdentifier("OnboardingAppName")
+                .accessibilityIdentifier("OnboardingAppName")
 
             Text(Constants.General.appSubTitle)
                 .font(.title)

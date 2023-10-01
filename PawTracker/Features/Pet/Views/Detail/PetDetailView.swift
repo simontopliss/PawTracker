@@ -42,11 +42,14 @@ struct PetDetailView: View {
         .alert("Remove pet?", isPresented: $showingRemoveAlert) {
             Button("Remove", role: .destructive, action: removePet)
                 .fontDesign(.rounded)
+                .accessibilityIdentifier("PetDetail_RemovePetButton")
             Button("Cancel", role: .cancel) {}
                 .fontDesign(.rounded)
+                .accessibilityIdentifier("PetDetail_CancelRemovePetButton")
         } message: {
             Text("Are you sure?")
                 .fontDesign(.rounded)
+                .accessibilityIdentifier("PetDetail_RemovePetConfirmation")
         }
         .foregroundColor(Constants.AppColors.textColor)
         .toolbar {
@@ -65,6 +68,7 @@ struct PetDetailView: View {
                 } label: {
                     Text("\(Image(systemName: "trash"))")
                 }
+                .accessibilityIdentifier("PetDetail_DeleteButton")
             }
         }
         .sheet(isPresented: $showingEditScreen) {

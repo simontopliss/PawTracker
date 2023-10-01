@@ -25,6 +25,7 @@ struct PetListImageView: View {
                 x: Constants.Shadows.smallX,
                 y: Constants.Shadows.smallY
             )
+            .accessibilityIdentifier("PetListImageView")
     }
 }
 

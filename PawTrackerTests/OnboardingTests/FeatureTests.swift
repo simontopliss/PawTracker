@@ -1,14 +1,7 @@
-//
-//  FeatureModelTests.swift
-//  PawTrackerTests
-//
-//  Created by Simon Topliss on 24/03/2023.
-//
-
 @testable import PawTracker
 import XCTest
 
-final class FeatureModelTests: XCTestCase {
+final class FeatureTests: XCTestCase {
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -28,5 +21,4 @@ final class FeatureModelTests: XCTestCase {
         XCTAssertEqual(feature.title, "Details")
         XCTAssertEqual(feature.description, "Name, date of birth, gender, breed.")
     }
-
 }
