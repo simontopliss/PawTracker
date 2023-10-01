@@ -23,6 +23,9 @@ struct CreateDailyFeedView: View {
 
     // MARK: - BODY
     var body: some View {
+        DismissButtonView()
+            .padding([.top, .bottom, .trailing])
+
         Form {
             Group {
                 Section {

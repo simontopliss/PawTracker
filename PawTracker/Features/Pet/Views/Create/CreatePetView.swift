@@ -28,7 +28,10 @@ struct CreatePetView: View {
 
     // MARK: - BODY
     var body: some View {
-        NavigationStack {
+        VStack {
+            DismissButtonView()
+                .padding([.top, .bottom, .trailing])
+
             Form {
                 Section {
                     EditablePetImageView(pet: $pet)
@@ -135,5 +138,4 @@ private extension CreatePetView {
             .lineLimit(5...10)
             .accessibilityIdentifier("CreatePetView_Description")
     }
-
 }

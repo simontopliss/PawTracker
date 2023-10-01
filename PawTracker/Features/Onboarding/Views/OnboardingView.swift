@@ -17,7 +17,7 @@ struct OnboardingView: View {
         VStack {
             ZStack(alignment: .top) {
                 PawTrackerIconView()
-                DismissButtonView(isPresented: $isPresented)
+                DismissButtonView()
             }
 
             ScrollView {

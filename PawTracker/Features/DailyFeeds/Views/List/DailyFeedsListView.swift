@@ -68,9 +68,9 @@ struct DailyFeedsListView: View {
                     .accessibilityIdentifier("DailyFeedsListView_AddButton")
                 }
             }
-            .sheet(isPresented: $showingAddScreen) {
-                CreateDailyFeedView()
-            }
+        }
+        .sheet(isPresented: $showingAddScreen) {
+            CreateDailyFeedView()
         }
     }
 }

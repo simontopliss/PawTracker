@@ -12,7 +12,7 @@ struct PetListView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var petViewModel: PetViewModel
 
-    @State private var showingAddScreen = false
+    @State private var isPresented = false
     @State private var confirmationShown = false
     @State private var selectedPet: Binding<Pet>?
 
@@ -61,7 +61,7 @@ struct PetListView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        showingAddScreen.toggle()
+                        isPresented.toggle()
                     } label: {
                         Label("Add Pet", systemImage: "plus.circle.fill")
                             .fontDesign(.rounded)
@@ -69,7 +69,7 @@ struct PetListView: View {
                     .accessibilityIdentifier("PetListView_AddPetButton")
                 }
             }
-            .sheet(isPresented: $showingAddScreen) {
+            .sheet(isPresented: $isPresented) {
                 CreatePetView()
             }
             .searchable(text: $petViewModel.searchQuery) {

@@ -102,7 +102,6 @@ struct EditEventView: View {
             petNames = petViewModel.pets.map { $0.name }
             selectedPetName = petNames.first
         }
-
     }
 
     func deleteEvent() {

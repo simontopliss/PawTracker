@@ -23,59 +23,63 @@ struct CreateEventView: View {
 
     // MARK: - BODY
     var body: some View {
-        Form {
-            Group {
-                Section {
-                    Picker("Pet", selection: $selectedPetName) {
-                        ForEach(petNames, id: \.self) { name in
-                            Text(name).tag(Optional(name))
-                                .accessibilityIdentifier("CreateEventView_PetName")
+        VStack {
+            DismissButtonView()
+                .padding([.top, .bottom, .trailing])
+
+            Form {
+                Group {
+                    Section {
+                        Picker("Pet", selection: $selectedPetName) {
+                            ForEach(petNames, id: \.self) { name in
+                                Text(name).tag(Optional(name))
+                                    .accessibilityIdentifier("CreateEventView_PetName")
+                            }
                         }
+                        .accessibilityIdentifier("CreateEventView_PetPicker")
+                        .fontWeight(.bold)
+
+                        DatePicker(
+                            "Date",
+                            selection: $date,
+                            in: Date()...,
+                            displayedComponents: [.date]
+                        )
+                        .accessibilityIdentifier("CreateEventView_DatePicker")
+
+                        TextField("Subject", text: $subject)
+                            .accessibilityIdentifier("CreateEventView_SubjectTextField")
+
+                        TextField("Notes", text: $notes, axis: .vertical)
+                            .lineLimit(5...20)
+                            .accessibilityIdentifier("CreateEventView_NotesTextField")
                     }
-                    .accessibilityIdentifier("CreateEventView_PetPicker")
-                    .fontWeight(.bold)
+                    .foregroundColor(Constants.AppColors.textColor)
 
-                    DatePicker(
-                        "Date",
-                        selection: $date,
-                        in: Date()...,
-                        displayedComponents: [.date]
-                    )
-                    .accessibilityIdentifier("CreateEventView_DatePicker")
-
-                    TextField("Subject", text: $subject)
-                        .accessibilityIdentifier("CreateEventView_SubjectTextField")
-
-                    TextField("Notes", text: $notes, axis: .vertical)
-                        .lineLimit(5...20)
-                        .accessibilityIdentifier("CreateEventView_NotesTextField")
-                }
-                .foregroundColor(Constants.AppColors.textColor)
-
-                Section {
-                    Button("Submit") {
-                        if let petName = selectedPetName,
-                            let pet = petViewModel.findPetByName(petName) {
-                            let event = Event(
-                                id: UUID(),
-                                date: date,
-                                petID: pet.id,
-                                subject: subject,
-                                notes: notes
-                            )
-                            eventsViewModel.addEvent(event)
+                    Section {
+                        Button("Submit") {
+                            if let petName = selectedPetName,
+                                let pet = petViewModel.findPetByName(petName) {
+                                let event = Event(
+                                    id: UUID(),
+                                    date: date,
+                                    petID: pet.id,
+                                    subject: subject,
+                                    notes: notes
+                                )
+                                eventsViewModel.addEvent(event)
+                            }
+                            dismiss()
                         }
-                        dismiss()
+                        .accessibilityIdentifier("CreateEventView_SubmitButton")
                     }
-                    .accessibilityIdentifier("CreateEventView_SubmitButton")
                 }
+                .fontDesign(.rounded)
             }
-            .fontDesign(.rounded)
-        }
-        .navigationTitle("Create Event")
-        .onAppear {
-            petNames = petViewModel.pets.map { $0.name }
-            selectedPetName = petNames.first
+            .onAppear {
+                petNames = petViewModel.pets.map { $0.name }
+                selectedPetName = petNames.first
+            }
         }
     }
 }

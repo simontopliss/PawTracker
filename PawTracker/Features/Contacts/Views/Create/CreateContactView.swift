@@ -23,46 +23,50 @@ struct CreateContactView: View {
 
     // MARK: - BODY
     var body: some View {
-        Form {
-            Group {
-                Section {
-                    TextField("Name", text: $contact.name)
-                        .fontWeight(.semibold)
-                        .accessibilityIdentifier("CreateContactView_NameTextField")
+        VStack {
+            DismissButtonView()
+                .padding([.top, .bottom, .trailing])
 
-                    TextField("Address", text: $contact.address, axis: .vertical)
-                        .lineLimit(3...10)
-                        .accessibilityIdentifier("CreateContactView_AddressTextField")
+            Form {
+                Group {
+                    Section {
+                        TextField("Name", text: $contact.name)
+                            .fontWeight(.semibold)
+                            .accessibilityIdentifier("CreateContactView_NameTextField")
 
-                    TextField("Post Code", text: $contact.postCode)
-                        .accessibilityIdentifier("CreateContactView_PostCodeTextField")
+                        TextField("Address", text: $contact.address, axis: .vertical)
+                            .lineLimit(3...10)
+                            .accessibilityIdentifier("CreateContactView_AddressTextField")
 
-                    TextField("Telephone", text: $contact.phoneNumber)
-                        .accessibilityIdentifier("CreateContactView_TelephoneTextField")
-                }
-                .foregroundColor(Constants.AppColors.textColor)
+                        TextField("Post Code", text: $contact.postCode)
+                            .accessibilityIdentifier("CreateContactView_PostCodeTextField")
 
-                Section {
-                    Button("Submit") {
-                        contactsViewModel.validateContact(contact)
-                        if contactsViewModel.hasValidatorError == false {
-                            contactsViewModel.addContact(contact)
-                            dismiss()
-                        }
+                        TextField("Telephone", text: $contact.phoneNumber)
+                            .accessibilityIdentifier("CreateContactView_TelephoneTextField")
                     }
-                    .accessibilityIdentifier("CreateContactView_SubmitButton")
+                    .foregroundColor(Constants.AppColors.textColor)
+
+                    Section {
+                        Button("Submit") {
+                            contactsViewModel.validateContact(contact)
+                            if contactsViewModel.hasValidatorError == false {
+                                contactsViewModel.addContact(contact)
+                                dismiss()
+                            }
+                        }
+                        .accessibilityIdentifier("CreateContactView_SubmitButton")
+                    }
                 }
+                .fontDesign(.rounded)
             }
-            .fontDesign(.rounded)
+            .alert(
+                isPresented: $contactsViewModel.hasValidatorError,
+                error: contactsViewModel.validatorError
+            ) {
+                Button("Cancel", role: .cancel) {}
+                    .accessibilityIdentifier("CreateContactView_ValidatorErrorAlert_CancelButton")
+            }
         }
-        .alert(
-            isPresented: $contactsViewModel.hasValidatorError,
-            error: contactsViewModel.validatorError
-        ) {
-            Button("Cancel", role: .cancel) {}
-                .accessibilityIdentifier("CreateContactView_ValidatorErrorAlert_CancelButton")
-        }
-        .navigationTitle("Add Contact")
     }
 }
 

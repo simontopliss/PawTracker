@@ -10,7 +10,7 @@ import SwiftUI
 struct DismissButtonView: View {
 
     // MARK: - PROPERTIES
-    @Binding var isPresented: Bool
+    @Environment(\.dismiss) private var dismiss
 
     // MARK: - BODY
     var body: some View {
@@ -18,7 +18,7 @@ struct DismissButtonView: View {
             Spacer()
 
             Button {
-                isPresented = false
+                dismiss()
             } label: {
                 Image(systemName: "xmark")
                     .imageScale(.large)
@@ -32,7 +32,7 @@ struct DismissButtonView: View {
 // MARK: - PREVIEW
 struct DismissButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        DismissButtonView(isPresented: .constant(false))
+        DismissButtonView()
             .previewLayout(.sizeThatFits)
     }
 }

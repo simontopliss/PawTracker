@@ -13,7 +13,7 @@ struct EventsListView: View {
     @EnvironmentObject var eventsViewModel: EventsViewModel
     @EnvironmentObject var petViewModel: PetViewModel
 
-    @State private var showingAddScreen = false
+    @State private var isPresented = false
     @State private var confirmationShown = false
     @State private var selectedEvent: Binding<Event>?
 
@@ -62,7 +62,7 @@ struct EventsListView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        showingAddScreen.toggle()
+                        isPresented.toggle()
                     } label: {
                         Label("Add Event", systemImage: "plus.circle.fill")
                             .fontDesign(.rounded)
@@ -70,9 +70,9 @@ struct EventsListView: View {
                     .accessibilityIdentifier("EventsListView_AddButton")
                 }
             }
-            .sheet(isPresented: $showingAddScreen) {
-                CreateDailyFeedView()
-            }
+        }
+        .sheet(isPresented: $isPresented) {
+            CreateEventView()
         }
     }
 }
