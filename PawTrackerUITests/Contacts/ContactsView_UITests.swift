@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class ContactsView_UITests: XCTestCase {
+final class ContactsListView_UITests: XCTestCase {
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     private var app: XCUIApplication!
@@ -51,31 +51,4 @@ final class ContactsView_UITests: XCTestCase {
         // swiftlint:disable:next force_cast
         XCTAssertEqual(telephoneTextField.value as! String, "(01482) 174370")
     }
-
-    func test_CreateContact() {
-
-        app.tabBars["Tab Bar"].buttons["Contacts"].tap()
-
-        let addButton = app.navigationBars["Contacts"].buttons["ContactsListView_AddButton"]
-        XCTAssert(addButton.exists)
-
-        // Go to CreateContactView
-        addButton.tap()
-
-        let collectionViewsQuery = app.collectionViews
-        let nameTextField = collectionViewsQuery.textFields["Name"]
-        XCTAssertEqual(nameTextField.placeholderValue, "Name")
-        nameTextField.tap()
-
-        collectionViewsQuery.textViews["Address"].tap()
-
-        let postCodeTextField = collectionViewsQuery.textFields["Post Code"]
-        postCodeTextField.tap()
-
-        let telephoneTextField = collectionViewsQuery.textFields["Telephone"]
-        telephoneTextField.tap()
-        nameTextField.tap()
-        collectionViewsQuery.buttons["CreateContactView_SubmitButton"].tap()
-    }
-
 }
