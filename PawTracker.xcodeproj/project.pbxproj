@@ -84,6 +84,10 @@
 		62BA286429AA549A005DD0F6 /* DismissButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BA286329AA549A005DD0F6 /* DismissButtonView.swift */; };
 		62BD65F02A0199EC0039A253 /* DailyFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BD65EF2A0199EC0039A253 /* DailyFeed.swift */; };
 		62BD65F22A0280EE0039A253 /* daily-feeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 62BD65F12A0280EE0039A253 /* daily-feeds.json */; };
+		62C770592AC9C075006C3C5E /* CreateDailyFeeds_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C770582AC9C075006C3C5E /* CreateDailyFeeds_UITests.swift */; };
+		62C7705B2AC9C0BC006C3C5E /* DailyFeedsList_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C7705A2AC9C0BC006C3C5E /* DailyFeedsList_UITests.swift */; };
+		62C7705D2AC9EA52006C3C5E /* CreateEvent_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C7705C2AC9EA52006C3C5E /* CreateEvent_UITests.swift */; };
+		62C7705F2AC9EFFF006C3C5E /* EditPet_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C7705E2AC9EFFF006C3C5E /* EditPet_UITests.swift */; };
 		62CD52D829A1208F00958C33 /* LinearGradientRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CD52D729A1208F00958C33 /* LinearGradientRectView.swift */; };
 		62F190902AC8DC0D00B2FC7A /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F1908F2AC8DC0D00B2FC7A /* Binding.swift */; };
 		62F190932AC8DD3200B2FC7A /* ContactsValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F190922AC8DD3200B2FC7A /* ContactsValidatorTests.swift */; };
@@ -192,6 +196,10 @@
 		62BA286329AA549A005DD0F6 /* DismissButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButtonView.swift; sourceTree = "<group>"; };
 		62BD65EF2A0199EC0039A253 /* DailyFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyFeed.swift; sourceTree = "<group>"; };
 		62BD65F12A0280EE0039A253 /* daily-feeds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "daily-feeds.json"; sourceTree = "<group>"; };
+		62C770582AC9C075006C3C5E /* CreateDailyFeeds_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDailyFeeds_UITests.swift; sourceTree = "<group>"; };
+		62C7705A2AC9C0BC006C3C5E /* DailyFeedsList_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyFeedsList_UITests.swift; sourceTree = "<group>"; };
+		62C7705C2AC9EA52006C3C5E /* CreateEvent_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEvent_UITests.swift; sourceTree = "<group>"; };
+		62C7705E2AC9EFFF006C3C5E /* EditPet_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPet_UITests.swift; sourceTree = "<group>"; };
 		62CD52D729A1208F00958C33 /* LinearGradientRectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradientRectView.swift; sourceTree = "<group>"; };
 		62F1908F2AC8DC0D00B2FC7A /* Binding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		62F190922AC8DD3200B2FC7A /* ContactsValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsValidatorTests.swift; sourceTree = "<group>"; };
@@ -804,6 +812,7 @@
 			children = (
 				623210312AC6324100371A1A /* PetListView_UITests.swift */,
 				6232102D2AC6324100371A1A /* CreatePetView_UITests.swift */,
+				62C7705E2AC9EFFF006C3C5E /* EditPet_UITests.swift */,
 			);
 			path = Pets;
 			sourceTree = "<group>";
@@ -812,6 +821,7 @@
 			isa = PBXGroup;
 			children = (
 				6232102C2AC6324100371A1A /* EventsView_UITests.swift */,
+				62C7705C2AC9EA52006C3C5E /* CreateEvent_UITests.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -819,6 +829,8 @@
 		62F190A22AC9103D00B2FC7A /* Feeds */ = {
 			isa = PBXGroup;
 			children = (
+				62C770582AC9C075006C3C5E /* CreateDailyFeeds_UITests.swift */,
+				62C7705A2AC9C0BC006C3C5E /* DailyFeedsList_UITests.swift */,
 			);
 			path = Feeds;
 			sourceTree = "<group>";
@@ -1071,7 +1083,11 @@
 				623210352AC6324100371A1A /* HomeView_UITests.swift in Sources */,
 				623210332AC6324100371A1A /* CreatePetView_UITests.swift in Sources */,
 				623210372AC6324100371A1A /* PetListView_UITests.swift in Sources */,
+				62C7705F2AC9EFFF006C3C5E /* EditPet_UITests.swift in Sources */,
+				62C770592AC9C075006C3C5E /* CreateDailyFeeds_UITests.swift in Sources */,
+				62C7705D2AC9EA52006C3C5E /* CreateEvent_UITests.swift in Sources */,
 				623210342AC6324100371A1A /* OnboardingView_UITests.swift in Sources */,
+				62C7705B2AC9C0BC006C3C5E /* DailyFeedsList_UITests.swift in Sources */,
 				623210362AC6324100371A1A /* ContactsView_UITests.swift in Sources */,
 				62F1909B2AC8F60700B2FC7A /* ContentView_UITests.swift in Sources */,
 				62F1909D2AC90F5800B2FC7A /* CreateContact_UITests.swift in Sources */,

@@ -1,13 +1,13 @@
 //
-//  EventsView_UITests.swift
-//  UITests
+//  CreateEvent_UITests.swift
+//  PawTrackerUITests
 //
-//  Created by Simon Topliss on 24/03/2023.
+//  Created by Simon Topliss on 01/10/2023.
 //
 
 import XCTest
 
-final class EventsView_UITests: XCTestCase {
+final class CreateEvent_UITests: XCTestCase {
 
     // swiftlint:disable:next implicitly_unwrapped_optional
     private var app: XCUIApplication!
@@ -27,30 +27,28 @@ final class EventsView_UITests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func test_EventsView() {
+    func test_CreateEventView() {
         app.tabBars["Tab Bar"].buttons["Events"].tap()
 
         let eventsListViewCollectionView = app.collectionViews["EventsListView_List"]
         XCTAssert(eventsListViewCollectionView.exists)
 
-        let firstCell = eventsListViewCollectionView.cells.firstMatch
-        firstCell.tap() // Go to EventDetailView
+        let addButton = app.buttons["EventsListView_AddButton"]
+        XCTAssert(addButton.exists)
+        addButton.tap() // Create new event
 
-        let datePicker = app.datePickers["EditEventView_DatePicker"]
+        let collectionViewsQuery = app.collectionViews
+
+        let datePicker = collectionViewsQuery.datePickers["CreateEventView_DatePicker"]
         XCTAssert(datePicker.exists)
 
-        let subjectTextField = app.textFields["EditEventView_SubjectTextField"]
+        let subjectTextField = collectionViewsQuery.textFields["CreateEventView_SubjectTextField"]
         XCTAssertEqual(subjectTextField.placeholderValue, "Subject")
 
-        let notesTextView = app.textViews["EditEventView_NotesTextField"]
+        let notesTextView = collectionViewsQuery.textViews["CreateEventView_NotesTextField"]
         XCTAssert(notesTextView.exists)
 
-        let saveButton = app.buttons["EditPetView_SubmitButton"]
-        XCTAssert(saveButton.exists)
-
-        let deleteButton = app.buttons["EditEventView_DeleteButton"]
-        XCTAssert(deleteButton.exists)
-
-        app.navigationBars.firstMatch.buttons["Events"].tap()
+        let submitButton = app.buttons["CreateEventView_SubmitButton"]
+        XCTAssert(submitButton.exists)
     }
 }

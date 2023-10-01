@@ -41,6 +41,10 @@ final class ContactsListView_UITests: XCTestCase {
         // swiftlint:disable:next force_cast
         XCTAssertEqual(nameTextField.value as! String, "Peel Vets")
 
+        let addressTextView = app.collectionViews.textViews["EditContactView_AddressTextField"]
+        // swiftlint:disable:next force_cast
+        XCTAssertEqual(addressTextView.value as! String, "21 Barnsley Buildings, Nornabell Street, Hull")
+
         let postCodeTextField = app.collectionViews.textFields["EditContactView_PostCodeTextField"]
         XCTAssertEqual(postCodeTextField.placeholderValue, "Post Code")
         // swiftlint:disable:next force_cast

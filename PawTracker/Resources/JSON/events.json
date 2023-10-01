@@ -1,34 +1,34 @@
 [
-	{
-		"id": "942F7AAF-9F8B-49E0-A82E-636E2704AC06",
+    {
+        "id": "942F7AAF-9F8B-49E0-A82E-636E2704AC06",
         "date": "2023-05-27T14:29:52Z",
         "pet_id": "08F40734-EFE6-4D75-B59A-37CD55948DBE",
         "subject": "2nd Vaccination",
         "notes": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "completed": false
-	},
-		{
-		"id": "5A704C49-5BD1-43CD-804D-AF19315F9E16",
+    },
+    {
+        "id": "5A704C49-5BD1-43CD-804D-AF19315F9E16",
         "date": "2023-06-07T14:09:00Z",
         "pet_id": "B3F5D49C-EE90-442B-8A6F-8557DA2DEEE7",
         "subject": "Birthday",
         "notes": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "completed": false
-	},
-	{
-		"id": "767A1F26-C4DD-4EA0-8819-8CB3B383CEAE",
+    },
+    {
+        "id": "767A1F26-C4DD-4EA0-8819-8CB3B383CEAE",
         "date": "2023-05-14T00:00:00Z",
         "pet_id": "22634591-5AB3-4FF8-BBAF-3E0D3A11C28F",
         "subject": "Birthday",
         "notes": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
         "completed": false
-	},
-	{
-		"id": "7307E767-2F7D-42E8-88BC-AC1E7B0988CE",
+    },
+    {
+        "id": "7307E767-2F7D-42E8-88BC-AC1E7B0988CE",
         "date": "2023-05-18T10:00:00Z",
         "pet_id": "D34DF44E-D7E5-4ED7-90DD-4C2E2DE39B3C",
         "subject": "Vet Appointment",
         "notes": "",
         "completed": false
-	}
+    }
 ]

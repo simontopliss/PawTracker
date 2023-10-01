@@ -33,18 +33,18 @@ struct EditDailyFeedView: View {
                 Section {
                     Toggle(isOn: $feed.feedTimes.morning) {
                         Text("Morning")
+                            .accessibilityIdentifier("EditPetView_MorningToggle")
                     }
-                    .accessibilityIdentifier("EditPetView_MorningToggle")
 
                     Toggle(isOn: $feed.feedTimes.lunch) {
                         Text("Lunch")
+                            .accessibilityIdentifier("EditPetView_LunchToggle")
                     }
-                    .accessibilityIdentifier("EditPetView_LunchToggle")
 
                     Toggle(isOn: $feed.feedTimes.evening) {
                         Text("Evening")
+                            .accessibilityIdentifier("EditPetView_EveningToggle")
                     }
-                    .accessibilityIdentifier("EditPetView_EveningToggle")
                 }
                 .foregroundColor(Constants.AppColors.textColor)
 

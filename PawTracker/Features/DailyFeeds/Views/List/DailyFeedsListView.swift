@@ -56,6 +56,7 @@ struct DailyFeedsListView: View {
                 }
                 .accessibilityIdentifier("DailyFeedsListView_ConfirmationDialog_YesButton")
             }
+            .accessibilityIdentifier("DailyFeedsListView_List")
             .navigationTitle("Daily Feeds")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

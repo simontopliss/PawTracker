@@ -1,10 +1,3 @@
-//
-//  CreatePetView_UITests.swift
-//  UITests
-//
-//  Created by Simon Topliss on 03/04/2023.
-//
-
 import XCTest
 
 final class CreatePetView_UITests: XCTestCase {
@@ -18,7 +11,6 @@ final class CreatePetView_UITests: XCTestCase {
         continueAfterFailure = false
 
         app = XCUIApplication()
-        app.launchArguments = ["-ui-testing"]
         app.launch()
     }
 
@@ -35,7 +27,46 @@ final class CreatePetView_UITests: XCTestCase {
         let petListViewAddPetButton = navBar.buttons["PetListView_AddPetButton"]
         XCTAssertTrue(petListViewAddPetButton.exists)
 
-        petListViewAddPetButton.tap() // Show the Edit sheet
+        petListViewAddPetButton.tap() // Show the Add Pet sheet
 
+        let collectionViewsQuery = app.collectionViews
+
+        let petNameTextField = collectionViewsQuery.textFields["CreatePetView_Name"]
+        XCTAssertTrue(petNameTextField.exists)
+        petNameTextField.tap()
+        petNameTextField.typeText("Test Pet")
+        // swiftlint:disable:next force_cast
+        XCTAssertEqual(petNameTextField.value as! String, "Test Pet")
+
+        let petTypeTextField = collectionViewsQuery.textFields["CreatePetView_Type"]
+        XCTAssertTrue(petTypeTextField.exists)
+        petTypeTextField.tap()
+        petTypeTextField.typeText("Test Type")
+        // swiftlint:disable:next force_cast
+        XCTAssertEqual(petTypeTextField.value as! String, "Test Type")
+
+        let petBreedTextField = collectionViewsQuery.textFields["CreatePetView_Breed"]
+        XCTAssertTrue(petBreedTextField.exists)
+        petBreedTextField.tap()
+        petBreedTextField.typeText("Test Breed")
+        // swiftlint:disable:next force_cast
+        XCTAssertEqual(petBreedTextField.value as! String, "Test Breed")
+
+        let petWeightTextField = collectionViewsQuery.textFields["CreatePetView_Weight"]
+        XCTAssertTrue(petWeightTextField.exists)
+        petWeightTextField.tap()
+        petWeightTextField.typeText(".50")
+        // swiftlint:disable:next force_cast
+        XCTAssertEqual(petWeightTextField.value as! String, "0.50")
+
+//        app.scrollViews.element.swipeDown()
+//
+//        let petDescriptionTextField = collectionViewsQuery.textFields["CreatePetView_Description"]
+//        XCTAssertTrue(petDescriptionTextField.exists)
+//        petDescriptionTextField.tap()
+//        petDescriptionTextField.typeText("Test Description")
+//        XCTAssertEqual(petDescriptionTextField.value as! String, "Test Description")
+//
+//        collectionViewsQuery.buttons["CreatePetView_SubmitButton"].tap()
     }
 }

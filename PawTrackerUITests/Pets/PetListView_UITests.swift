@@ -18,7 +18,6 @@ final class PetListView_UITests: XCTestCase {
         continueAfterFailure = false
 
         app = XCUIApplication()
-        app.launchArguments = ["-ui-testing"]
         app.launch()
     }
 

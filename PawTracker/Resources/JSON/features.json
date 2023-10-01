@@ -1,22 +1,22 @@
 [
-	{
+    {
         "id": "F528772D-AD38-43C7-8CA7-CE8FE0ABE4DA",
         "title": "Details",
-		"description": "Name, date of birth, gender, breed."
-	},
-	{
+        "description": "Name, date of birth, gender, breed."
+    },
+    {
         "id": "286561F3-3BD6-4280-B21E-80334807FE5C",
-		"title": "Food",
-		"description": "Daily reminders to feed your pets."
-	},
-	{
+        "title": "Food",
+        "description": "Daily reminders to feed your pets."
+    },
+    {
         "id": "EACF6100-B0BC-4E71-A110-24ABC4ADE79C",
-		"title": "Events",
-		"description": "Record any upcoming events such as vet appointments and birthdays."
-	},
-	{
+        "title": "Events",
+        "description": "Record any upcoming events such as vet appointments and birthdays."
+    },
+    {
         "id": "55A9EF5A-FDEB-409C-A563-2B6D4B370622",
-		"title": "Contacts",
-		"description": "Keep the contact information for your vet, groomer, walker etc. handy."
-	}
+        "title": "Contacts",
+        "description": "Keep the contact information for your vet, groomer, walker etc. handy."
+    }
 ]

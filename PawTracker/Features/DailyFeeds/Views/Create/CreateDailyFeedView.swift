@@ -40,18 +40,18 @@ struct CreateDailyFeedView: View {
 
                     Toggle(isOn: $morning) {
                         Text("Morning")
+                            .accessibilityIdentifier("CreateDailyFeedView_MorningToggle")
                     }
-                    .accessibilityIdentifier("CreateDailyFeedView_MorningToggle")
 
                     Toggle(isOn: $lunch) {
                         Text("Lunch")
+                            .accessibilityIdentifier("CreateDailyFeedView_LunchToggle")
                     }
-                    .accessibilityIdentifier("CreateDailyFeedView_LunchToggle")
 
                     Toggle(isOn: $evening) {
                         Text("Evening")
+                            .accessibilityIdentifier("CreateDailyFeedView_EveningToggle")
                     }
-                    .accessibilityIdentifier("CreateDailyFeedView_EveningToggle")
                 }
                 .toggleStyle(SwitchToggleStyle())
                 .foregroundColor(Constants.AppColors.textColor)
